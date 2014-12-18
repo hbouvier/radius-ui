@@ -1,0 +1,46 @@
+<div class="container" ng-controller="RadiusUICtrl as ctrl">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Password Reset</h3>
+        </div>
+        <br>
+        <form class="form-horizontal" role="form">
+          <div ng-class="{true: 'form-group', false:'form-group has-error'}[validate(model.username, 2)]">
+            <label for="username" class="col-sm-2 control-label">User Name</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="username" placeholder="" ng-model='model.username'>
+            </div>
+          </div>
+          <div ng-class="{true: 'form-group', false:'form-group has-error'}[validate(model.password)]">
+            <label for="password" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-4">
+              <input type="password" class="form-control" id="password" placeholder="" ng-model='model.password'>
+            </div>
+          </div>
+          <div ng-class="{true: 'form-group', false:'form-group has-error'}[validate(model.verifyPassword)]">
+            <label for="verifyPassword" class="col-sm-2 control-label">Verify Password</label>
+            <div class="col-sm-4">
+              <input type="password" class="form-control" id="verifyPassword" placeholder="" ng-model='model.verifyPassword'>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" ng-model="model.create"> CREATE NEW USER
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" ng-class="{true: 'btn btn-default', false:'btn btn-danger'}[passwordsMatch(model)]" ng-disabled="!passwordsMatch(model)" ng-click="resetPassword(model)">Reset Password!</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

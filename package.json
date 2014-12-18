@@ -1,0 +1,17 @@
+{
+    "name": "radius-ui",
+    "version": "0.0.1",
+    "main": "radius-ui.js",
+    "dependencies": {
+        "sqlite3"  : "~2.2",
+        "tomahawk" : "~0.2"
+    },
+    "engines": {
+        "node": ">=0.10"
+    },
+    "configuration" : {
+        "port"    : 3080,
+        "level"   : "debug"
+    }
+ }
+
